@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: numberderployment
+spec:
+  selector:
+    matchLabels:
+      app: number-front
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: number-front
+    spec:
+      containers:
+      - name: nginx
+        image: frontnumber:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: number-webservice
+spec:
+  selector:
+    app: number-front
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

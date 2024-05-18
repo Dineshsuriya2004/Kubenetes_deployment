@@ -1,0 +1,56 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead > tr > th {
+  background-color: #dddddd;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px;
+}
+
+.heading{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.print-btn{
+  justify-content: center;
+}
+
+.btn{
+  font-size: 18px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: lightgreen;
+}
+
+.other{
+  font-size: 26px;
+}
+
+.addr > h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.addr > p {
+  margin-left: 20px;
+}

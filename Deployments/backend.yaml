@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: number-deployment
+  labels:
+    app: number
+spec:
+  selector:
+    matchLabels:
+      app: number
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: number
+    spec:
+      containers:
+      - name: hello
+        image: number:latest
+        imagePullPolicy: Never
+        ports:
+        - name: http
+          containerPort: 3000 
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: number-service
+spec:
+  selector:
+    app: number
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 3000 		
+    targetPort: 3000
